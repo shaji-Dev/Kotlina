@@ -1,0 +1,3 @@
+rootProject.name='Kotlina Library'
+include ':app'
+include ':kotlina'

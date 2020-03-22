@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="restart">Restart</string>
+    <string name="update_downloaded">Update downloaded</string>
+    <string name="permission_write_external_storage_rationale">Storage permission is required</string>
+</resources>

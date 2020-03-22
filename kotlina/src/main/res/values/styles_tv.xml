@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Text.Display1">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Display1</item>
+        <item name="fontPath">@string/font_product_sans_light</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Text.Title">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Title</item>
+        <item name="fontPath">@string/font_product_sans_regular</item>
+    </style>
+
+    <style name="Text.ListItem">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+        <item name="fontPath">@string/font_product_sans_regular</item>
+    </style>
+
+    <style name="Text.Body1">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+        <item name="fontPath">@string/font_roboto_regular</item>
+    </style>
+
+    <style name="Text.Body1.Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="Text.Body2">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+        <item name="fontPath">@string/font_roboto_regular</item>
+    </style>
+
+    <style name="Text.Body1.ProductSans">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+        <item name="fontPath">@string/font_product_sans_regular</item>
+    </style>
+
+    <style name="Text.Body2.ProductSans">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+        <item name="fontPath">@string/font_product_sans_regular</item>
+    </style>
+
+    <style name="Text.Caption">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Caption</item>
+        <item name="fontPath">@string/font_roboto_regular</item>
+    </style>
+
+</resources>

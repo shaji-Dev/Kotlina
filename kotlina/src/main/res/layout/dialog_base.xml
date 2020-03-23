@@ -8,6 +8,10 @@
     android:background="@color/bgDialog">
 
     <androidx.cardview.widget.CardView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         style="@style/Center"
         android:layout_width="@dimen/abc_config_prefDialogWidth"
         android:layout_height="wrap_content"

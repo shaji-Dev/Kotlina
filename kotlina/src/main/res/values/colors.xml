@@ -5,4 +5,10 @@
     <color name="bgDialog">#88000000</color>
     <color name="thumb_color">#66aaaaaa</color>
     <color name="md_black_1000">#000000</color>
+    <color name="greatRed">#ff404c</color>
+
+    <color name="btn_disabled">#bfbfbf</color>
+    <color name="s50">#637381</color>
+    <color name="s30">#dbe2e8</color>
+    <color name="s20">#f4f6f8</color>
 </resources>

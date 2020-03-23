@@ -16,7 +16,7 @@
         <item name="android:background">?selectableItemBackground</item>
     </style>
     <style name="Button.Borderless.Colored">
-        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
     </style>
     <style name="Button.Borderless.Colored.Caps">
         <item name="android:textAllCaps">true</item>

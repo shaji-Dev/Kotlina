@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="colorPrimaryHalf" format="color" />
+    <attr name="colorPrimaryQuarter" format="color" />
+    <attr name="colorPrimaryText" format="color" />
+
+</resources>

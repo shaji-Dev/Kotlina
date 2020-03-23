@@ -1,12 +1,33 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
+apply plugin: 'com.jfrog.bintray' // Apply Bintray Plugin
+apply plugin: 'com.github.dcendents.android-maven' // Apply Maven Plugin
+
+ext{
+    bintrayRepo = "Kotlina" // The repository name in Bintray dashboard
+    bintrayName = "com.shaji.kotlina" // The package name of the Bintray repository
+
+    libraryName = "kotlina" // The module name in Android Studio project
+
+    publishedGroupId = "com.shaji.kotlina" // The ID you want to add in 'implementation' line
+    artifact = "kotlina" // The artifact you want to add in 'implementation' line
+    libraryVersion = '1.0.0'
+
+    libraryDescription = 'Generic Kotlin extensions and helpers for a cleaner and faster coding'
+    siteUrl ='https://github.com/shaji-Dev/Kotlina'
+    gitUrl ='https://github.com/shaji-Dev/Kotlina.git'
+    developerId = 'shaji-Dev'
+    developerName = 'Shafik jininy'
+    developerEmail = 'shafik@blueblinkone.com'
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
 
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
-    publishNonDefault true
 
     defaultConfig {
         minSdkVersion 21
@@ -53,8 +74,17 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation 'com.google.android.play:core:1.6.5'
+    implementation 'com.google.android.play:core:1.7.1'
     implementation 'com.karumi:dexter:6.0.2'
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'io.github.inflationx:calligraphy3:3.1.1'
+}
+
+repositories{
+    mavenCentral()
+}
+
+if(project.rootProject.file('local.properties').exists()){
+    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
 }

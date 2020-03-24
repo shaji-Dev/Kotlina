@@ -242,6 +242,11 @@ abstract class BaseAdapter<T>(items: MutableList<T>,
         return null
     }
 
+    fun clear(){
+        items.clear()
+        notifyDataSetChanged()
+    }
+
     private fun applyAndAnimateRemovals(newData: MutableList<T>) {
         for (i in items.indices.reversed()) {
             val model = items[i]

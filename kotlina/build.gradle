@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.github.dcendents.android-maven' // Apply Maven Plugin
+apply plugin: 'com.novoda.bintray-release'
 
 //ext{
 //    bintrayRepo = "Kotlina" // The repository name in Bintray dashboard
@@ -81,9 +81,9 @@ dependencies {
 
 repositories {
     mavenCentral()
-    maven {
-        url  "https://dl.bintray.com/shaji-devs/Kotlina"
-    }
+//    maven {
+//        url  "https://dl.bintray.com/shaji-devs/Kotlina"
+//    }
 }
 
 apply from: 'publish.gradle'

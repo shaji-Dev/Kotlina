@@ -1,43 +1,59 @@
-apply plugin: 'maven-publish'
-apply plugin: 'com.jfrog.bintray'
-
-group 'com.shaji.kotlina'
-version '1.0.0'
-
-project.ext {
-    mavGitUrl = 'https://github.com/shaji-Dev/Kotlina.git'
-    mavProjectName = 'Kotlina'
-    mavLibraryLicenses = ["Apache-2.0":'http://www.apache.org/licenses/LICENSE-2.0.txt']
-    mavLibraryDescription = "Generic Kotlin extensions and helpers for a cleaner and faster coding"
-    mavPublishToMavenLocal = true
-    mavSiteUrl = 'https://github.com/shaji-Dev/Kotlina'
-}
-
 def properties = new Properties()
 properties.load(new FileInputStream("local.properties"))
 
-bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
-    publications = ['Production']
-    configurations = ['archives']
+publish {
+    bintrayUser = properties.getProperty("bintray.user")
+    bintrayKey = properties.getProperty("bintray.apikey")
+    userOrg = 'shaji-devs'
+    groupId = 'com.shaji.kotlina'
+    repoName = 'Kotlina'
+    artifactId = 'kotlina-core'
+    publishVersion = '1.0.0'
     override = true
-    pkg {
-        repo = 'Kotlina'
-        name = 'com.shaji.kotlina'
-        userOrg = 'shaji-devs'
-        description = "Generic Kotlin extensions and helpers for a cleaner and faster coding"
-        publish = true
-        publicDownloadNumbers = true
-        licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/shaji-Dev/Kotlina'
-        version {
-            name = this.version
-            desc = "Version ${this.version}"
-            released = new Date()
-            vcsTag = this.version
-        }
-    }
+    desc = 'Generic Kotlin extensions and helpers for a cleaner and faster coding'
+    website = 'https://github.com/shaji-Dev/Kotlina'
 }
 
-apply from: 'https://raw.githubusercontent.com/sky-uk/gradle-maven-plugin/master/gradle-mavenizer.gradle'
+//apply plugin: 'maven-publish'
+//apply plugin: 'com.jfrog.bintray'
+//
+//group 'com.shaji.kotlina'
+//version '1.0.1'
+//
+//project.ext {
+//    mavGitUrl = 'https://github.com/shaji-Dev/Kotlina.git'
+//    mavProjectName = 'Kotlina'
+//    mavLibraryLicenses = ["Apache-2.0":'http://www.apache.org/licenses/LICENSE-2.0.txt']
+//    mavLibraryDescription = "Generic Kotlin extensions and helpers for a cleaner and faster coding"
+//    mavPublishToMavenLocal = true
+//    mavSiteUrl = 'https://github.com/shaji-Dev/Kotlina'
+//}
+//
+//def properties = new Properties()
+//properties.load(new FileInputStream("local.properties"))
+//
+//bintray {
+//    user = properties.getProperty("bintray.user")
+//    key = properties.getProperty("bintray.apikey")
+//    publications = ['Production']
+//    configurations = ['archives']
+//    override = true
+//    pkg {
+//        repo = 'Kotlina'
+//        name = 'com.shaji.kotlina'
+//        userOrg = 'shaji-devs'
+//        description = "Generic Kotlin extensions and helpers for a cleaner and faster coding"
+//        publish = true
+//        publicDownloadNumbers = true
+//        licenses = ['Apache-2.0']
+//        vcsUrl = 'https://github.com/shaji-Dev/Kotlina'
+//        version {
+//            name = this.version
+//            desc = "Version ${this.version}"
+//            released = new Date()
+//            vcsTag = this.version
+//        }
+//    }
+//}
+//
+//apply from: 'https://raw.githubusercontent.com/sky-uk/gradle-maven-plugin/master/gradle-mavenizer.gradle'

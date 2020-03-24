@@ -7,10 +7,6 @@ buildscript {
         jcenter()
         maven {
             url  "https://dl.bintray.com/shaji-devs/Kotlina"
-            credentials {
-                username 'shaji-devs'
-                password '6e7068c1b2dd5dda47362be0ee919f5946921bec'
-            }
         }
     }
     dependencies {

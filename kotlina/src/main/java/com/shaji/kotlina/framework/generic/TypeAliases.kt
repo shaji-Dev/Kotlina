@@ -2,7 +2,7 @@ package com.shaji.kotlina.framework.generic
 
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
-import com.shaji.kotlina.view.MaterialDialog
+import com.shaji.kotlina.view.dialog.MaterialDialog
 
 typealias Callback<T> = (T) -> Unit
 typealias Success<T> = (T) -> Unit

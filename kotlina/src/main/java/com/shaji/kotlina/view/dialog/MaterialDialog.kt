@@ -1,4 +1,4 @@
-package com.shaji.kotlina.view
+package com.shaji.kotlina.view.dialog
 
 import android.app.Dialog
 import android.content.Context
@@ -434,7 +434,10 @@ class MaterialDialog(internal val context: Context, private val mBuilder: Builde
         }
 
         fun create(): MaterialDialog {
-            return MaterialDialog(this.mContext, this)
+            return MaterialDialog(
+                this.mContext,
+                this
+            )
         }
     }
 

@@ -9,15 +9,13 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
+import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import androidx.annotation.AttrRes
 import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
-import com.shaji.kotlina.framework.generic.PermissionRequestCallback
-import com.shaji.kotlina.framework.generic.Success
-import com.shaji.kotlina.framework.generic.UpdateAvailableListener
-import com.shaji.kotlina.framework.generic.VoidListener
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
@@ -32,7 +30,11 @@ import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.shaji.kotlina.R
-import com.shaji.kotlina.view.MaterialDialog
+import com.shaji.kotlina.framework.generic.PermissionRequestCallback
+import com.shaji.kotlina.framework.generic.Success
+import com.shaji.kotlina.framework.generic.UpdateAvailableListener
+import com.shaji.kotlina.framework.generic.VoidListener
+import com.shaji.kotlina.view.dialog.MaterialDialog
 import org.jetbrains.anko.toast
 
 fun Activity.inflate(@LayoutRes layoutId: Int, parent: ViewGroup? = null): View {
@@ -243,4 +245,21 @@ fun Activity.openGooglePlayServices() {
     } catch (e: Exception) {
         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=$appPackageName")))
     }
+}
+
+fun Activity.getColorPrimary(ctx: Activity): Int {
+    return getThemeColor(ctx, R.attr.colorPrimary)
+}
+
+fun Activity.getColorAccent(ctx: Activity): Int {
+    return getThemeColor(ctx, R.attr.colorAccent)
+}
+
+private fun Activity.getThemeColor(
+    context: Activity,
+    @AttrRes attributeColor: Int
+): Int {
+    val value = TypedValue()
+    context.theme.resolveAttribute(attributeColor, value, true)
+    return value.data
 }

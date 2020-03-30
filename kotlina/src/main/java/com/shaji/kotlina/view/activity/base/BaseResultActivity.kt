@@ -32,13 +32,21 @@ abstract class BaseResultActivity : AppCompatActivity() {
 
 @Suppress("NON_PUBLIC_CALL_FROM_PUBLIC_INLINE")
 @PublishedApi
-internal inline fun <reified T : Activity> BaseResultActivity.startForResult(vararg params: Pair<String, Any?>, requestCode: Int = -1, noinline callback: Success<Intent>) {
+internal inline fun <reified T : Activity> BaseResultActivity.startForResult(
+    vararg params: Pair<String, Any?>,
+    requestCode: Int = -1,
+    noinline callback: Success<Intent>
+) {
     this.nextRequestCode = if (requestCode == -1) autoGenerateRequestCode++ else requestCode
     this.nextResultCallback = callback
     startActivityForResult<T>(this.nextRequestCode, *params)
 }
 
-fun BaseResultActivity.startForResultIntent(intent: Intent, requestCode: Int = -1, callback: Success<Intent>) {
+fun BaseResultActivity.startForResultIntent(
+    intent: Intent,
+    requestCode: Int = -1,
+    callback: Success<Intent>
+) {
     this.nextRequestCode = if (requestCode == -1) autoGenerateRequestCode++ else requestCode
     this.nextResultCallback = callback
     startActivityForResult(intent, this.nextRequestCode)

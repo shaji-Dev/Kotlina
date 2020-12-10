@@ -8,7 +8,7 @@ publish {
     groupId = 'com.shaji.kotlina'
     repoName = 'Kotlina'
     artifactId = 'kotlina-core'
-    publishVersion = '1.0.3'
+    publishVersion = '1.0.4'
     override = true
     desc = 'Generic Kotlin extensions and helpers for a cleaner and faster coding'
     website = 'https://github.com/shaji-Dev/Kotlina'

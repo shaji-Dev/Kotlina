@@ -21,8 +21,8 @@ abstract class BaseAdapter<T>(items: MutableList<T>,
         private const val VIEW_TYPE_FOOTER = -2
         private const val VIEW_TYPE_PAGINATION_PROGRESS = -3
 
-        private const val PROGRESS_POSITION_START = 0
-        private const val PROGRESS_POSITION_END = 1
+        const val PROGRESS_POSITION_START = 0
+        const val PROGRESS_POSITION_END = 1
     }
 
     private var onItemClickListener: OnItemClickListener<T>? = null
@@ -155,7 +155,7 @@ abstract class BaseAdapter<T>(items: MutableList<T>,
             if (isEnabled) {
                 notifyItemInserted(itemCount)
             } else {
-                notifyItemRemoved(itemCount)
+                notifyItemRemoved(itemCount - 1)
             }
         }
         this.isPaginationProgressEnabled = isEnabled

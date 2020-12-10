@@ -150,14 +150,16 @@ abstract class BaseAdapter<T>(items: MutableList<T>,
      * @param isEnabled to turn on or off footer.
      */
     fun setProgressEnabled(isEnabled: Boolean, progressPosition: Int = paginationProgressPosition) {
-        this.paginationProgressPosition = progressPosition
         if (this.isPaginationProgressEnabled != isEnabled) {
             if (isEnabled) {
-                notifyItemInserted(itemCount)
+                val pos = if(this.paginationProgressPosition == PROGRESS_POSITION_START) 0 else itemCount
+                notifyItemInserted(pos)
             } else {
-                notifyItemRemoved(itemCount - 1)
+                val pos = if(this.paginationProgressPosition == PROGRESS_POSITION_START) 0 else itemCount -1
+                notifyItemRemoved(pos)
             }
         }
+        this.paginationProgressPosition = progressPosition
         this.isPaginationProgressEnabled = isEnabled
     }
 

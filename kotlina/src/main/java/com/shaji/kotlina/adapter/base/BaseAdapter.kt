@@ -120,7 +120,7 @@ abstract class BaseAdapter<T>(items: MutableList<T>,
 
     override fun getItemViewType(position: Int): Int {
         if (isPaginationProgressEnabled) {
-            if (paginationProgressPosition == PROGRESS_POSITION_END && position >= itemCount || paginationProgressPosition == PROGRESS_POSITION_START && position == 0) {
+            if ((paginationProgressPosition == PROGRESS_POSITION_END && position >= itemCount - 1) || (paginationProgressPosition == PROGRESS_POSITION_START && position == 0)) {
                 return VIEW_TYPE_PAGINATION_PROGRESS
             }
         }
@@ -149,19 +149,7 @@ abstract class BaseAdapter<T>(items: MutableList<T>,
      *
      * @param isEnabled to turn on or off footer.
      */
-    fun setProgressEnabled(isEnabled: Boolean) {
-        this.setProgressEnabled(isEnabled, paginationProgressPosition)
-    }
-
-
-    /**
-     * Enable or disable footer (Default is true)
-     *
-     * Do not set to true when loading initial data, set this to true when loading the next page
-     *
-     * @param isEnabled to turn on or off footer.
-     */
-    fun setProgressEnabled(isEnabled: Boolean, progressPosition: Int) {
+    fun setProgressEnabled(isEnabled: Boolean, progressPosition: Int = paginationProgressPosition) {
         this.paginationProgressPosition = progressPosition
         if (this.isPaginationProgressEnabled != isEnabled) {
             if (isEnabled) {
